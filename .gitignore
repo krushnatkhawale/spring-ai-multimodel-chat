@@ -1,0 +1,49 @@
+# Gradle
+.gradle/
+/build/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.log
+*.lock
+
+# Maven
+/target/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.swp
+*.bak
+*.orig
+*.pyc
+*.class
+
+# Spring Boot
+/bin/
+/out/
+.project
+.settings
+.classpath
+tmp/
+.apt_generated
+.factorypath
+.springBeans
+
+# Specific to Spring AI Multimodel Chat (if any)
+# Add any other specific files or directories you want to ignore here
