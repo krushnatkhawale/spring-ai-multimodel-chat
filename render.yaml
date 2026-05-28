@@ -9,8 +9,6 @@ services:
     buildCommand: ""
     # The startCommand is empty because the ENTRYPOINT in the Dockerfile handles starting the application.
     startCommand: ""
-    # The port your Spring Boot application listens on.
-    port: 8080
     # You can specify environment variables here if needed, e.g., for database connections or API keys.
     # envVars:
     #   - key: DATABASE_URL

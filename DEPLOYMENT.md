@@ -60,8 +60,6 @@ You should have the following files in your project root:
         buildCommand: ""
         # The startCommand is empty because the ENTRYPOINT in the Dockerfile handles starting the application.
         startCommand: ""
-        # The port your Spring Boot application listens on.
-        port: 8080
         # You can specify environment variables here if needed, e.g., for database connections or API keys.
         # envVars:
         #   - key: DATABASE_URL
@@ -69,7 +67,7 @@ You should have the following files in your project root:
         #   - key: API_KEY
         #     value: ${YOUR_API_KEY}
     ```
-    This `render.yaml` file is a Render Blueprint that tells Render to deploy a web service named `spring-ai-multimodel-chat` using Docker. It specifies that the application listens on port `8080`.
+    This `render.yaml` file is a Render Blueprint that tells Render to deploy a web service named `spring-ai-multimodel-chat` using Docker. The port is inferred from the `EXPOSE` instruction in the `Dockerfile`.
 
 ## Deployment Steps
 
