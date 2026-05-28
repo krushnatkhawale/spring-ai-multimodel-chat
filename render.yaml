@@ -1,0 +1,19 @@
+# This file defines the services for deploying your Spring Boot application to Render.com.
+# For more information, see https://render.com/docs/yaml-blueprint
+
+services:
+  - type: web
+    name: spring-ai-multimodel-chat
+    env: docker
+    # The buildCommand is empty because the Dockerfile handles the build process.
+    buildCommand: ""
+    # The startCommand is empty because the ENTRYPOINT in the Dockerfile handles starting the application.
+    startCommand: ""
+    # The port your Spring Boot application listens on.
+    port: 8080
+    # You can specify environment variables here if needed, e.g., for database connections or API keys.
+    # envVars:
+    #   - key: DATABASE_URL
+    #     value: ${YOUR_DATABASE_URL}
+    #   - key: API_KEY
+    #     value: ${YOUR_API_KEY}
