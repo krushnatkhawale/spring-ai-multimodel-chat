@@ -4,21 +4,22 @@ FROM eclipse-temurin:17-jdk-jammy
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Gradle wrapper files
+# Copy the Gradle wrapper files and build configuration
 COPY gradlew .
-COPY gradle gradle
-
-# Copy the build.gradle and settings.gradle files
+COPY gradle gradle/
 COPY build.gradle settings.gradle ./
-
-# Copy the source code
-COPY src src
 
 # Grant execute permission to the Gradle wrapper
 RUN chmod +x gradlew
 
+# Download dependencies and ensure Gradle wrapper is initialized
+# This step leverages Docker caching and ensures the wrapper is ready
+RUN ./gradlew dependencies --no-daemon
+
+# Copy the source code
+COPY src src
+
 # Build the application
-# Use --no-daemon to avoid issues with daemon processes in Docker builds
 RUN ./gradlew bootJar --no-daemon
 
 # Expose the port Spring Boot runs on
